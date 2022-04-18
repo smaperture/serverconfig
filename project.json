@@ -1,0 +1,29 @@
+{
+  "root": "libs/server-config",
+  "projectType": "library",
+  "sourceRoot": "libs/server-config",
+  "targets": {
+    "test": {
+      "executor": "@nrwl/workspace:run-commands",
+      "options": {
+        "cwd": "libs/server-config",
+        "command": "go test ./... -cover -race"
+      }
+    },
+    "coverage": {
+      "executor": "@nrwl/workspace:run-commands",
+      "options": {
+        "cwd": "libs/server-config",
+        "command": "go test ./... -coverprofile=coverage.out && go tool cover -html=\"coverage.out\""
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/workspace:run-commands",
+      "options": {
+        "cwd": "libs/server-config",
+        "command": "golangci-lint run"
+      }
+    }
+  },
+  "tags": []
+}
